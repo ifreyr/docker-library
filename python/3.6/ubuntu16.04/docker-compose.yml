@@ -1,0 +1,5 @@
+version: '3'
+services:
+  cuda:
+    build: .
+    image: ifreyr3030/python:3.6-ubuntu16.04
