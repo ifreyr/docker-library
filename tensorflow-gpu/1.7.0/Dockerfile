@@ -5,15 +5,18 @@ ENV TZ=Asia/Shanghai
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+# ADD sources.list /etc/apt/sources.list
+
+RUN apt-get update --fix-missing && \
+    apt-get install -y --no-install-recommends \
         build-essential \
         curl \
         libfreetype6-dev \
         libpng12-dev \
         libzmq3-dev \
         pkg-config \
-        python3.5 \
-        python3.5-dev \
+        python3 \
+        python3-dev \
         rsync \
         software-properties-common \
         unzip \
@@ -21,7 +24,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN ln -sf /usr/bin/python3.5 /usr/bin/python
+RUN ln -sf /usr/bin/python3 /usr/bin/python
 
 RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py && \
