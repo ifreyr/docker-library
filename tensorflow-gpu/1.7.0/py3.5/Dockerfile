@@ -36,7 +36,7 @@ RUN pip --no-cache-dir install \
         pandas \
         scipy \
         sklearn \
-        tensorflow-gpu:1.7.0
+        tensorflow-gpu==1.7.0
 
 
 # For CUDA profiling, TensorFlow requires CUPTI.
