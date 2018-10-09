@@ -1,0 +1,5 @@
+version: '3'
+services:
+  cuda:
+    build: .
+    image: ifreyr3030/tensorflow:1.11.0-gpu
