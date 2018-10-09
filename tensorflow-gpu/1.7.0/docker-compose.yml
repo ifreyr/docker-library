@@ -2,4 +2,4 @@ version: '3'
 services:
   cuda:
     build: .
-    image: ifreyr3030/tensorflow-gpu:1.7.0
+    image: ifreyr3030/tensorflow:1.7.0-gpu
